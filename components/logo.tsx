@@ -1,31 +1,17 @@
-import { cn } from '@/lib/utils'
+'use client'
 
-export const Logo = ({ className }: { className?: string }) => {
-  return (
-    <img
-      src="/logo.svg"
-      alt="Faturizze Logo"
-      className={cn('h-5 w-auto', className)}
-    />
-  )
-}
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
-export const LogoIcon = ({ className }: { className?: string }) => {
-  return (
-    <img
-      src="/logo.svg"
-      alt="Faturizze Logo Icon"
-      className={cn('h-5 w-auto', className)}
-    />
-  )
-}
+export function Logo() {
+  const { theme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
-export const LogoStroke = ({ className }: { className?: string }) => {
-  return (
-    <img
-      src="/logo.svg"
-      alt="Faturizze Logo Stroke"
-      className={cn('h-5 w-auto', className)}
-    />
-  )
+  // Garante que só renderiza após montar no cliente
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+
+  return <img style={{ height: '37px', width: 'auto' }} src="https://minio.faturizze.com/statics/1.png" alt="Logo" />
 }

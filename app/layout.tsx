@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider"
+
+
 import { Jost } from "next/font/google"
 
 const jost = Jost({
@@ -9,28 +11,34 @@ const jost = Jost({
   variable: "--font-jost",
 })
 
-
 export const metadata: Metadata = {
-  title: "Sistema de Monitoramento de Transações",
-  description: "Monitoramento de transações em tempo real, detecção de fraudes e automação de processos.",
+  title: "Dashboard",
+  description: "Dashboard da Faturizze",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f0f0f" }, // ou outra cor escura
+  ],
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
-export default function RootLayout({
+export default function DashboardLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt" suppressHydrationWarning>
-      <body className={`${jost.className} antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+    <html
+      lang="pt"
+      className={`dark ${jost.className}`}
+      suppressHydrationWarning
+    >
+      <body
+        className={`antialiased`}
+      >
+        {children}
+
       </body>
     </html>
   );

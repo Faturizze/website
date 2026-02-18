@@ -5,44 +5,27 @@ export default function FeaturesSection() {
     return (
         <section className="overflow-hidden py-16 md:py-32">
             <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
-                <div className="relative z-10 max-w-2xl">
-                    <h2 className="text-4xl font-semibold lg:text-5xl">
-                        A Melhor Escolha Dos Comerciantes!
+                
+                <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+                  <div className="text-center lg:text-left">
+                    <h2 className="mt-8 text-4xl font-bold md:text-5xl">
+                      Controle Total Das Suas Transações
                     </h2>
-                    <p className="mt-6 text-lg">
-                        Controle cada transação, detecte fraudes e automatize processos financeiros de forma rápida e confiável.
+                    <p className="mt-6 text-lg text-muted-foreground">
+                      Controlo total sobre o que entra e sai do teu celular, com registo em tempo real de todas as transações, garantindo transparência e segurança.
                     </p>
+                  </div>
+                  <div>
+                    <Image
+                      src="https://minio.faturizze.com/statics/Phone-2.png"
+                      alt="Tailark"
+                      width={3000}
+                      height={2800}
+                      className="w-48 md:w-72 h-auto"
+                    />
+                  </div>
                 </div>
-
-                <div className="mask-b-from-75% mask-l-from-75% mask-b-to-95% mask-l-to-95% relative -mx-4 pr-3 pt-3 md:-mx-12">
-                    <div className="perspective-midrange">
-                        <div className="rotate-x-6 -skew-2">
-                            <div className="aspect-88/36 relative">
-                                <Image
-                                    src="/dashboard-features.png"
-                                    className="absolute inset-0 z-10"
-                                    alt="Ilustração do dashboard de monitoramento"
-                                    width={1600}
-                                    height={650}
-                                />
-                                <Image
-                                    src="/dashboard-features-dark.png"
-                                    className="hidden dark:block"
-                                    alt="Ilustração do dashboard dark"
-                                    width={1600}
-                                    height={650}
-                                />
-                                <Image
-                                    src="/dashboard-features-light.png"
-                                    className="dark:hidden"
-                                    alt="Ilustração do dashboard light"
-                                    width={1600}
-                                    height={650}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    
 
                 <div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4">
                     <div className="space-y-3">
